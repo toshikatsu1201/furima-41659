@@ -72,4 +72,6 @@ group :test do
 end
 
 gem 'devise'
-gem 'build'
+group :production do
+  gem 'pg'
+end
