@@ -15,7 +15,7 @@
 
 ### Association
 
-* has_one :items
+* has_many :items
 * has_many :records
 
 ## 商品情報テーブル(items)
