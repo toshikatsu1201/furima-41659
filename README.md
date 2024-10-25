@@ -27,6 +27,7 @@
 | price              | decimal             | null: false                    |
 | image              | binary              | null: false                    |
 
+
 ### Association
 
 * has_one :users
