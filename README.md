@@ -32,6 +32,7 @@
 | region_id          | integer                | null: false                    |
 | schedule_day_id          | integer                | null: false            |
 
+
 ### Association
 
 * belongs_to :user
