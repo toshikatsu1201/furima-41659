@@ -7,7 +7,7 @@ FactoryBot.define do
     last_name_kana { "ヤマダ" }
     first_name_kana { "タロウ" }
     password { "Password1" }
-    email { "test@example.com" }
+    email { "Faker::Internet.email" }
     birth_date { "2000-12-01"}
   end
 end
