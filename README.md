@@ -26,11 +26,11 @@
 | user               | references          | null: false, foreign_key: true |
 | price              | integer             | null: false                    |
 | explanation        | text                | null: false                    |
-| condition_id          | integer                | null: false                 |
-| cost_id          | integer                | null: false                    |
-| category_id          | integer                | null: false                 |
-| region_id          | integer                | null: false                    |
-| schedule_day_id          | integer                | null: false            |
+| condition_id       | integer             | null: false                    |
+| cost_id            | integer             | null: false                    |
+| category_id        | integer             | null: false                    |
+| region_id          | integer             | null: false                    |
+| schedule_day_id    | integer             | null: false                    |
 
 
 ### Association
@@ -55,13 +55,13 @@
 
 | Column             | Type                | Options                        |
 | ------------------ | ------------------- | ------------------------------ |
-| post_code          | string              | null: false |
-|  region_id          | integer                | null: false  |
-| city               | string          | null: false |
-| house_number             | string              | null: false                |
-| building            | string           |                      |
-| tel               | string             | null: false                    |
-| record           | references          | null: false, foreign_key: true |
+| post_code          | string              | null: false                    |
+| region_id          | integer             | null: false                    |
+| city               | string              | null: false                    |
+| house_number       | string              | null: false                    |
+| building           | string              |                                |
+| tel                | string              | null: false                    |
+| record             | references          | null: false, foreign_key: true |
 
 
 ### Association
