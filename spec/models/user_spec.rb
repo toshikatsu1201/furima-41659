@@ -70,11 +70,12 @@ RSpec.describe User, type: :model do
       it 'パスワードが英字と数字を含まない場合は無効' do
         @user.password = 'password'
         @user.valid?
-        expect(@user.errors.full_messages).to include('には英字と数字の両方を含めて設定してください')
-
+        expect(@user.errors.full_messages).to include('Password には英字と数字の両方を含めて設定してください')
+      end
+      it 'パスワードが英字と数字を含まない場合は無効' do
         @user.password = '123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include('には英字と数字の両方を含めて設定してください')
+        expect(@user.errors.full_messages).to include('Password には英字と数字の両方を含めて設定してください')
       end
     end
   end

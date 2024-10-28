@@ -8,5 +8,6 @@ FactoryBot.define do
     first_name_kana { "タロウ" }
     password { "Password1" }
     email { "test@example.com" }
+    birth_date { "2000-12-01"}
   end
 end
