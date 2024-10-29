@@ -5,9 +5,17 @@ function calculateProfit() {
 
   if (priceInput) { // priceInputが存在する場合のみイベントリスナーを設定
     priceInput.addEventListener("input", () => {
-      const inputValue = priceInput.value;
-      feeOutput.innerHTML = Math.floor(inputValue * 0.1);  // 10%の手数料
-      profitOutput.innerHTML = Math.floor(inputValue * 0.9);  // 利益を計算して表示エリアに反映する（価格の90%を計算し、小数点以下は切り捨て）
+      const inputValue = parseInt(priceInput.value, 10); // 入力値を整数に変換
+      if (!isNaN(inputValue)) { // inputValueが数値であるかを確認
+        const fee = Math.floor(inputValue * 0.1);  // 10%の手数料
+        const profit = Math.floor(inputValue - fee);  // 利益を計算（価格から手数料を引く）
+        
+        feeOutput.innerHTML = fee;  // 手数料を表示
+        profitOutput.innerHTML = profit;  // 利益を表示
+      } else {
+        feeOutput.innerHTML = 0; // 入力が無効な場合は手数料を0に
+        profitOutput.innerHTML = 0; // 入力が無効な場合は利益を0に
+      }
     });
   }
 }
