@@ -10,6 +10,4 @@ class Condition < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :items
-
-  validates :id, numericality: { other_than: 0, message: "選択してください" }
 end
