@@ -1,16 +1,18 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
   def index
+    @ship_record = ShipRecord.new
   end
 
   def create
     @ship_record = ShipRecord.new(ship_record_params.merge(user_id: current_user.id, item_id: @item.id))
-    if @ship_record.save
+    if @ship_record.valid?
+      @ship_record.save
     # 保存が成功した場合の処理
       redirect_to root_path
     else
     # 保存に失敗した場合の処理
-      render :index
+      render :index, status: :unprocessable_entity
     end
   end
 
