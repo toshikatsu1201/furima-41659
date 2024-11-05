@@ -1,6 +1,6 @@
 class ShipRecord
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :post_code, :region_id, :city, :house_number, :building, :tel
+  attr_accessor :user_id, :item_id, :post_code, :region_id, :city, :house_number, :building, :tel, :token
 
   with_options presence: true do
     validates :user_id
@@ -10,6 +10,7 @@ class ShipRecord
     validates :city
     validates :house_number
     validates :tel, format: { with: /\A\d{10,11}\z/, message: "is invalid. Input only numbers" }
+    validates :token, presence: true
   end
 
   def save

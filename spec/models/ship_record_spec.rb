@@ -11,6 +11,10 @@ RSpec.describe ShipRecord, type: :model do
 
   describe '配送先情報の保存' do
     context '内容に問題がない場合' do
+      it "priceとtokenがあれば保存ができること" do
+        expect(@ship_record).to be_valid
+      end
+
       it '全ての値が正しく入力されていれば保存できること' do
         expect(@ship_record).to be_valid
       end
@@ -86,6 +90,12 @@ RSpec.describe ShipRecord, type: :model do
         @ship_record.item_id = nil
         @ship_record.valid?
         expect(@ship_record.errors.full_messages).to include("Item can't be blank")
+      end
+
+      it 'tokenが空では保存できないこと' do
+        @ship_record.token = ''
+        @ship_record.valid?
+        expect(@ship_record.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
