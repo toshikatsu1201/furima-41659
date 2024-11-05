@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
+  before_action :authenticate_user!, only: [:index]
+  
   def index
+    redirect_to root_path if current_user == @item.user || @item.record.present?
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @ship_record = ShipRecord.new
   end
