@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @ship_record = ShipRecord.new(ship_record_params.merge(user_id: current_user.id, item_id: @item.id))
+    @ship_record = ShipRecord.new(ship_record_params)
     if @ship_record.valid?
       pay_item
       @ship_record.save
@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   end
 
   def ship_record_params
-    params.require(:ship_record).permit(:post_code, :region_id, :city, :house_number, :building, :tel).merge(token: params[:token])
+    params.require(:ship_record).permit(:post_code, :region_id, :city, :house_number, :building, :tel).merge(token: params[:token],user_id: current_user.id, item_id: @item.id)
   end
 
   def pay_item

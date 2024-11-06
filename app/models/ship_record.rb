@@ -10,7 +10,7 @@ class ShipRecord
     validates :city
     validates :house_number
     validates :tel, format: { with: /\A\d{10,11}\z/, message: "is invalid. Input only numbers" }
-    validates :token, presence: true
+    validates :token
   end
 
   def save
