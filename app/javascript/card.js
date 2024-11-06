@@ -24,10 +24,10 @@ const pay = () => {
       cardNumberElement.clear();
       cardExpiryElement.clear();
       cardCvcElement.clear();
-      document.getElementById("charge-form").submit();
+      renderDom.submit();// document.getElementById("charge-form").submit();
     });
   });
 };
 
 window.addEventListener("turbo:load", pay);
-window.addEventListener("turbo:render", pay);
+// window.addEventListener("turbo:render", pay);
