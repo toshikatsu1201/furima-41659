@@ -24,7 +24,7 @@ const pay = () => {
       cardNumberElement.clear();
       cardExpiryElement.clear();
       cardCvcElement.clear();
-      renderDom.submit();// document.getElementById("charge-form").submit();
+      document.getElementById("charge-form").submit();
     });
   });
 };
