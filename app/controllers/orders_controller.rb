@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   
   def index
     redirect_to root_path if current_user == @item.user || @item.record.present?
-    gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+    gon.public_key = ENV[PAYJP_PUBLIC_KEY]
     @ship_record = ShipRecord.new
   end
 
